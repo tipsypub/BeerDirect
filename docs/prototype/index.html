@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BeerDirect Prototype</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">BD</div>
+        <div>
+          <div class="brand-title">BeerDirect</div>
+          <div class="brand-subtitle">Research Workspace</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-view="dashboard">Dashboard</button>
+        <button class="nav-item" data-view="sources">Sources</button>
+        <button class="nav-item" data-view="documents">Documents</button>
+        <button class="nav-item" data-view="digests">Digests</button>
+        <button class="nav-item" data-view="watchlists">Watchlists</button>
+        <button class="nav-item" data-view="entries">Entries</button>
+        <button class="nav-item" data-view="tags">Tags</button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="sidebar-note">Mintlify-inspired static prototype</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="page-title">Dashboard</h1>
+          <p id="page-desc">A calm, research-first workspace for beer sources, documents, digests, and watchlists.</p>
+        </div>
+        <div class="topbar-actions">
+          <input class="search-input" placeholder="Search prototype content..." />
+          <button class="btn btn-secondary">Import</button>
+          <button class="btn btn-primary">New Item</button>
+        </div>
+      </header>
+
+      <section class="view active" id="view-dashboard">
+        <div class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-label">Sources</div>
+            <div class="stat-value">128</div>
+            <div class="stat-hint">12 P1 sources under active review</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-label">Documents</div>
+            <div class="stat-value">46</div>
+            <div class="stat-hint">8 PDFs waiting for digest extraction</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-label">Digests</div>
+            <div class="stat-value">31</div>
+            <div class="stat-hint">Most recent: Hop whitepaper summary</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-label">Entries</div>
+            <div class="stat-value">217</div>
+            <div class="stat-hint">24 platform observations this week</div>
+          </article>
+        </div>
+
+        <div class="two-col-grid">
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Recent Activity</h2>
+              <button class="text-btn">View all</button>
+            </div>
+            <div class="activity-list">
+              <article class="activity-item">
+                <div>
+                  <strong>Lallemand Webinar Notes</strong>
+                  <div class="meta-line">Digest · 2 hours ago</div>
+                </div>
+                <span class="priority-badge p1">P1</span>
+              </article>
+              <article class="activity-item">
+                <div>
+                  <strong>New Yakima Chief source added</strong>
+                  <div class="meta-line">Source · 5 hours ago</div>
+                </div>
+                <span class="tag neutral">ingredient</span>
+              </article>
+              <article class="activity-item">
+                <div>
+                  <strong>Untappd watchlist updated for IPA brands</strong>
+                  <div class="meta-line">Watchlist · today</div>
+                </div>
+                <span class="tag neutral">untappd</span>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Focus Queue</h2>
+              <button class="text-btn">Open queue</button>
+            </div>
+            <div class="focus-list">
+              <article class="focus-item">
+                <div>
+                  <strong>Hop whitepaper PDF needs digest</strong>
+                  <div class="meta-line">Document · Whitepaper · pending</div>
+                </div>
+                <span class="status-badge warning">pending</span>
+              </article>
+              <article class="focus-item">
+                <div>
+                  <strong>3 entries missing tags</strong>
+                  <div class="meta-line">Entry cleanup</div>
+                </div>
+                <span class="status-badge info">review</span>
+              </article>
+              <article class="focus-item">
+                <div>
+                  <strong>WeChat watchlist has not been checked for 7 days</strong>
+                  <div class="meta-line">Watchlist maintenance</div>
+                </div>
+                <span class="status-badge danger">stale</span>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Topic Blocks</h2>
+          </div>
+          <div class="topic-grid">
+            <div class="topic-card"><strong>Hops</strong><span>13 docs · 41 entries</span></div>
+            <div class="topic-card"><strong>Yeast</strong><span>8 docs · 19 entries</span></div>
+            <div class="topic-card"><strong>Haze</strong><span>5 docs · 14 entries</span></div>
+            <div class="topic-card"><strong>China Market</strong><span>12 watch targets · 33 entries</span></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="view-sources">
+        <section class="panel">
+          <div class="filter-bar">
+            <input class="filter-input" placeholder="Search sources" />
+            <select><option>All categories</option><option>technical</option><option>news</option></select>
+            <select><option>All access</option><option>public</option><option>paid</option></select>
+            <select><option>All priority</option><option>P1</option><option>P2</option></select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Access</th>
+                  <th>Priority</th>
+                  <th>Platform</th>
+                  <th>Updated</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Brewers Association</td>
+                  <td><span class="tag neutral">research</span></td>
+                  <td>public</td>
+                  <td><span class="priority-badge p1">P1</span></td>
+                  <td>website</td>
+                  <td>today</td>
+                </tr>
+                <tr>
+                  <td>Brewbound</td>
+                  <td><span class="tag neutral">news</span></td>
+                  <td>public</td>
+                  <td><span class="priority-badge p1">P1</span></td>
+                  <td>website</td>
+                  <td>today</td>
+                </tr>
+                <tr>
+                  <td>BYO Plus</td>
+                  <td><span class="tag neutral">technical</span></td>
+                  <td>paid</td>
+                  <td><span class="priority-badge p1">P1</span></td>
+                  <td>membership</td>
+                  <td>yesterday</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="detail-layout">
+          <article class="panel detail-main">
+            <div class="panel-head"><h2>Selected Source</h2></div>
+            <h3>Brewers Association</h3>
+            <p class="lead-text">High-credibility association source for industry baseline, competition information, and research context.</p>
+            <div class="meta-grid">
+              <div><span class="meta-label">Category</span><strong>research</strong></div>
+              <div><span class="meta-label">Access</span><strong>public</strong></div>
+              <div><span class="meta-label">Priority</span><strong>P1</strong></div>
+              <div><span class="meta-label">Language</span><strong>en</strong></div>
+            </div>
+          </article>
+          <aside class="panel detail-side">
+            <div class="panel-head"><h2>Related</h2></div>
+            <div class="tag-row">
+              <span class="tag accent">competition</span>
+              <span class="tag accent">style</span>
+              <span class="tag accent">industry</span>
+            </div>
+            <ul class="simple-list">
+              <li>3 related documents</li>
+              <li>12 related entries</li>
+              <li>2 related digests</li>
+            </ul>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view" id="view-documents">
+        <section class="panel">
+          <div class="filter-bar">
+            <input class="filter-input" placeholder="Search documents" />
+            <select><option>All types</option><option>whitepaper</option><option>book</option><option>paper</option></select>
+            <select><option>All status</option><option>pending</option><option>completed</option></select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Type</th>
+                  <th>Source</th>
+                  <th>Status</th>
+                  <th>Language</th>
+                  <th>Updated</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hop Whitepaper 2025</td>
+                  <td>whitepaper</td>
+                  <td>BarthHaas</td>
+                  <td><span class="status-badge warning">pending</span></td>
+                  <td>en</td>
+                  <td>today</td>
+                </tr>
+                <tr>
+                  <td>Modern Yeast Handling Guide</td>
+                  <td>pdf</td>
+                  <td>Lallemand</td>
+                  <td><span class="status-badge success">completed</span></td>
+                  <td>en</td>
+                  <td>2 days ago</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="detail-layout">
+          <article class="panel detail-main">
+            <div class="panel-head"><h2>Document Detail</h2></div>
+            <h3>Hop Whitepaper 2025</h3>
+            <p class="lead-text">A structured technical and market whitepaper focused on hop production, varieties, and usage implications.</p>
+            <div class="callout info-callout">
+              <strong>Processing note</strong>
+              <p>Marked as P1. Recommended next step: create a condensed digest focused on varieties, market shifts, and brewer implications.</p>
+            </div>
+          </article>
+          <aside class="panel detail-side">
+            <div class="panel-head"><h2>Metadata</h2></div>
+            <ul class="meta-list">
+              <li><span>Type</span><strong>whitepaper</strong></li>
+              <li><span>Status</span><strong>pending</strong></li>
+              <li><span>Source</span><strong>BarthHaas</strong></li>
+              <li><span>File</span><strong>hop-whitepaper-2025.pdf</strong></li>
+            </ul>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view" id="view-digests">
+        <section class="digest-layout">
+          <aside class="panel toc-panel">
+            <div class="panel-head"><h2>Sections</h2></div>
+            <ul class="simple-list">
+              <li>Summary</li>
+              <li>Key Findings</li>
+              <li>Key Parameters</li>
+              <li>Research Value</li>
+              <li>Page References</li>
+            </ul>
+          </aside>
+
+          <article class="panel digest-content">
+            <div class="digest-header">
+              <div>
+                <div class="meta-line">summary · related document: Hop Whitepaper 2025</div>
+                <h2>Hop Whitepaper 核心摘要</h2>
+              </div>
+              <div class="tag-row">
+                <span class="tag accent">hops</span>
+                <span class="tag accent">market</span>
+                <span class="priority-badge p1">P1</span>
+              </div>
+            </div>
+
+            <div class="markdown-block">
+              <h3>Summary</h3>
+              <p>This digest extracts the highest-value insights from the source whitepaper and reformats them into a structured BeerDirect knowledge asset.</p>
+
+              <div class="callout takeaway-callout">
+                <strong>Key takeaway</strong>
+                <p>Hop variety shifts should be tracked not only as ingredient news, but as signals that affect brewer recipe strategy and market positioning.</p>
+              </div>
+
+              <h3>Key Findings</h3>
+              <ul>
+                <li>Several aroma-forward varieties continue to dominate brewer attention.</li>
+                <li>Supply-side pressure and crop variability remain important context.</li>
+                <li>Product strategy should connect hop research with style and positioning analysis.</li>
+              </ul>
+
+              <h3>Key Parameters</h3>
+              <p>Keep page-level references visible, preserve source context, and split large documents into digest-friendly thematic sections.</p>
+            </div>
+          </article>
+
+          <aside class="panel meta-panel">
+            <div class="panel-head"><h2>Digest Meta</h2></div>
+            <ul class="meta-list">
+              <li><span>Source</span><strong>BarthHaas</strong></li>
+              <li><span>Pages</span><strong>p.12–18</strong></li>
+              <li><span>Status</span><strong>active</strong></li>
+              <li><span>Updated</span><strong>today</strong></li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag neutral">ingredient</span>
+              <span class="tag neutral">whitepaper</span>
+            </div>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view" id="view-watchlists">
+        <section class="panel">
+          <div class="filter-bar">
+            <select><option>Xiaohongshu</option><option>Wechat</option><option>Untappd</option><option>X</option></select>
+            <input class="filter-input" placeholder="Search watchlists" />
+            <select><option>All types</option><option>brand</option><option>media</option><option>bar</option></select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Platform</th>
+                  <th>Type</th>
+                  <th>Region</th>
+                  <th>Priority</th>
+                  <th>Reason</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>某精酿品牌</td>
+                  <td>xiaohongshu</td>
+                  <td>brand</td>
+                  <td>china</td>
+                  <td><span class="priority-badge p1">P1</span></td>
+                  <td><span class="tag neutral">new_release</span></td>
+                </tr>
+                <tr>
+                  <td>Untappd IPA Brand Pool</td>
+                  <td>untappd</td>
+                  <td>brand</td>
+                  <td>global</td>
+                  <td><span class="priority-badge p1">P1</span></td>
+                  <td><span class="tag neutral">trend</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="view-entries">
+        <section class="panel">
+          <div class="panel-head"><h2>Research Entries</h2></div>
+          <div class="entry-list">
+            <article class="entry-card">
+              <h3>某酒厂发布新酒花 IPA</h3>
+              <div class="meta-line">brand_update · xiaohongshu · today</div>
+              <p>Observed as a potential signal for regional hop-forward style positioning and launch language.</p>
+              <div class="tag-row">
+                <span class="tag accent">china</span>
+                <span class="tag accent">ipa</span>
+                <span class="tag accent">new_release</span>
+              </div>
+            </article>
+            <article class="entry-card">
+              <h3>Lallemand webinar mentioned fermentation control topic</h3>
+              <div class="meta-line">technical · source-linked · yesterday</div>
+              <p>Useful candidate for turning into a digest or a topic note under yeast and fermentation control.</p>
+              <div class="tag-row">
+                <span class="tag accent">yeast</span>
+                <span class="tag accent">fermentation</span>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="view-tags">
+        <section class="panel">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Group</th>
+                  <th>Usage</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>hops</td>
+                  <td>ingredient</td>
+                  <td>41</td>
+                  <td>Hop-related ingredient and market topics</td>
+                </tr>
+                <tr>
+                  <td>china</td>
+                  <td>region</td>
+                  <td>33</td>
+                  <td>China market and local platform observations</td>
+                </tr>
+                <tr>
+                  <td>haze</td>
+                  <td>process</td>
+                  <td>14</td>
+                  <td>Haze stability and hazy IPA related notes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
