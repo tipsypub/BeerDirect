@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BeerDirect</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #171a21;
+      --text: #f5f7fb;
+      --muted: #a9b2c3;
+      --accent: #d9a441;
+      --border: #2a3040;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #0f1115 0%, #141925 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 20px 72px;
+    }
+    .hero {
+      background: rgba(23, 26, 33, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 44px;
+      line-height: 1.1;
+    }
+    .sub {
+      margin: 0;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 760px;
+    }
+    .badge {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(217, 164, 65, .12);
+      border: 1px solid rgba(217, 164, 65, .35);
+      color: #f4c86f;
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-weight: 600;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #1a1a1a;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .section {
+      margin-top: 28px;
+      background: rgba(23, 26, 33, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+    }
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge">Beer Knowledge Infrastructure</div>
+      <h1>BeerDirect</h1>
+      <p class="sub">一个持续自动搜集、整理、归档并输出啤酒行业资料与信息的项目。它面向新闻、酿造技术、风格研究、原料、设备、品牌、市场与专题分析，逐步形成可检索、可追踪、可复用的知识底座。</p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://github.com/tipsypub/BeerDirect">查看仓库</a>
+        <a class="btn btn-secondary" href="https://github.com/tipsypub/BeerDirect/blob/main/README.md">阅读 README</a>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>行业动态</h3>
+          <p>持续整理精酿行业新闻、酒厂动态、比赛、奖项、展会与市场变化。</p>
+        </div>
+        <div class="card">
+          <h3>酿造技术</h3>
+          <p>覆盖原料、发酵、工艺优化、稳定性、氧化控制与设备趋势。</p>
+        </div>
+        <div class="card">
+          <h3>风格研究</h3>
+          <p>整理风格资料、标杆产品案例、新趋势与本土化产品方向。</p>
+        </div>
+        <div class="card">
+          <h3>知识输出</h3>
+          <p>支持摘要、周报、月报、专题报告与后续智能体知识接入。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>当前阶段</h2>
+      <p>项目目前处于初始化阶段，已建立基础目录结构，后续将逐步接入信息源配置、自动采集、清洗、分类与导出流程。</p>
+      <ul>
+        <li>建立公开信息源清单</li>
+        <li>形成分类与标签体系</li>
+        <li>接入自动抓取与归档</li>
+        <li>输出啤酒行业周报与专题报告</li>
+      </ul>
+    </section>
+
+    <footer>
+      Built for ongoing beer intelligence collection and structured knowledge organization.
+    </footer>
+  </div>
+</body>
+</html>
